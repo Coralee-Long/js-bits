@@ -19,7 +19,7 @@
 
 body {
 	min-height: 100vh;
-  min-width: fit-content;
+ min-width: fit-content;
 	margin: 0 auto;
 	background-attachment: fixed;
 	background-color: var(--color-bg-1);
@@ -57,7 +57,7 @@ h1 {
 }
 
 h2 {
-	font-size: 1rem;
+	font-size: 1.5rem;
 }
 
 pre {
@@ -66,7 +66,7 @@ pre {
 	background-color: rgba(255, 255, 255, 0.45);
 	border-radius: 3px;
 	box-shadow: 2px 2px 6px rgb(255 255 255 / 25%);
-	padding: 0.5em;
+	padding: 1em;
 	overflow-x: auto;
 	color: var(--color-text);
 }
