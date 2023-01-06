@@ -30,7 +30,7 @@
 		flex-direction: column;
 		align-items: center;
 		padding: 1rem 4rem;
-		max-width: 64rem;
+		max-width: 1000px;
 		margin: 0 auto;
 		box-sizing: border-box;
 	}

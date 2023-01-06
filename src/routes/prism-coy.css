@@ -6,6 +6,7 @@
 
 code[class*="language-"],
 pre[class*="language-"] {
+	/* width: 100%; */
 	color: black;
 	background: none;
 	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
@@ -28,12 +29,12 @@ pre[class*="language-"] {
 
 /* Code blocks */
 pre[class*="language-"] {
+	/* width: 100%; */
 	position: relative;
 	margin: 2em;
 	overflow: visible;
 	padding: 0;
  border-radius: 0.7rem; /* Add Rounded Corners */
-	width: 90%;
 	min-width: 275px;
 
 }
