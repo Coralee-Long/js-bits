@@ -152,6 +152,97 @@ userReviews['myFriendJack123'] += 2;  // Add 2
 	</Prism>
 
 	<h2>Nested Arrays & Objects</h2>
+
+	<p>Student Data Example:</p>
+
+	<Prism language="javascript"
+		>{`const student = {
+			firstName : 'David',
+			lastName: 'Jones',
+			strengths: [ 'Music', 'Art'],
+			exams : {
+				midterm : 92,
+				final : 88
+			}
+		};
+
+		const avgMarks = (student.exams.midterm + student.exams.final) / 2; 
+
+		// avgMarks -> 90
+
+		// student.strengths[1] -> 'Art'
+
+		`}
+	</Prism>
+
+	<p>Shopping Cart Example:</p>
+
+	<Prism language="javascript"
+		>{`const shoppingCart = [
+	{
+		product : 'Jenga Classic',
+		price: 6.88,
+		quantity: 1
+		},
+		{
+		product : 'Echo Dot',
+		price: 29.99,
+		quantity: 3
+	},
+		{
+		product : 'Fire Stick',
+		price: 39.99,
+		quantity: 2
+			}
+		]
+
+			`}
+	</Prism>
+
+	<p>Tic-Tac-Toe Example:</p>
+
+	<Prism language="javascript"
+		>{`const game = {
+		player1: 'Blue',
+		playingAs: 'X',
+
+		player2: 'Muffins',
+		playingAs: 'O',
+
+		board: [
+			['0', null, 'X'],
+			['X', 'O', 'X'],
+			['null', 'O', 'X']
+		]
+	};
+			`}
+	</Prism>
+
+	<h2>Objects & Reference Types</h2>
+
+	<Prism language="javascript"
+		>{`Object and Array Variables only store a reference to the values, as opposed to regular variables that can be assigned basic values (strings, numbers, booleans etc.) This is why we can use 'const' instead of 'let'.
+			
+		const palette = {
+			red: '#FF0000',
+			blue: '#0000FF',
+			yellow: '#FFFF00'
+		};
+
+		const palette2 = palette;
+		palette2.green = '#00FF00';
+	
+		console.log(palette2); 
+	
+		// blue: '#0000FF';
+		// green: '#00FF00';
+		// red: '#FF0000';
+		// yellow: '#FFFF00';
+			`}
+	</Prism>
+
+	<h2>Array / Object Equality</h2>
+
 	<!-- <p>
 		The page you're looking at is purely static HTML, with no client-side interactivity needed.
 		Because of that, we don't need to load any JavaScript. Try viewing the page's source, or opening
