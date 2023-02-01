@@ -35,6 +35,16 @@
 		justify-content: center;
 		align-items: center;
 		flex: 0.6;
+		background-image: url('$lib/images/doge_wallpaper.jpg');
+		background-repeat: no-repeat;
+		background-size: cover;
+		min-height: 100vh;
+		min-width: 100%;
+	}
+
+	.soon {
+		font-size: 40px;
+		color: black;
 	}
 
 	h1 {

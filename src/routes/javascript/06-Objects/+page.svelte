@@ -21,7 +21,8 @@
 
 	<p>Objects are collections of Properties, and Properties are a key-value pairs:</p>
 	<Prism language="javascript">
-		{`Rather than accessing data using an index (like with Arrays), we use custom keys: 
+		{`Rather than accessing data using an index (like with Arrays), 
+we use custom keys: 
 
 const user = {
 // 🔑 key        // 💎 value     
@@ -99,6 +100,7 @@ Values can be retrieved using Dot-Notation:
 
 	<Prism language="javascript"
 		>{`let 76trombones = 'song'; // 76trombones -> Invalid or unexpected token
+
 `}
 	</Prism>
 
@@ -152,6 +154,136 @@ userReviews['myFriendJack123'] += 2;  // Add 2
 	</Prism>
 
 	<h2>Nested Arrays & Objects</h2>
+
+	<p>Student Data Example:</p>
+
+	<Prism language="javascript"
+		>{`const student = {
+			firstName : 'David',
+			lastName: 'Jones',
+			strengths: [ 'Music', 'Art'],
+			exams : {
+				midterm : 92,
+				final : 88
+			}
+		};
+
+		const avgMarks = (student.exams.midterm + student.exams.final) / 2; 
+
+		// avgMarks -> 90
+
+		// student.strengths[1] -> 'Art'
+
+		`}
+	</Prism>
+
+	<p>Shopping Cart Example:</p>
+
+	<Prism language="javascript"
+		>{`const shoppingCart = [
+		{
+			product : 'Jenga Classic',
+			price: 6.88,
+			quantity: 1
+		},
+		{
+			product : 'Echo Dot',
+			price: 29.99,
+			quantity: 3
+		},
+		{
+			product : 'Fire Stick',
+			price: 39.99,
+			quantity: 2
+		}
+	]
+	`}
+	</Prism>
+
+	<p>Tic-Tac-Toe Example:</p>
+
+	<Prism language="javascript"
+		>{`const game = {
+		player1: 'Blue',
+		playingAs: 'X',
+
+		player2: 'Muffins',
+		playingAs: 'O',
+
+		board: [
+			['0', null, 'X'],
+			['X', 'O', 'X'],
+			['null', 'O', 'X']
+		]
+	};
+			`}
+	</Prism>
+
+	<h2>Objects & Reference Types</h2>
+	<p>
+		Object and Array Variables only store a reference to the values, as opposed to regular variables
+		that can be assigned basic values (strings, numbers, booleans etc.) This is why we can use
+		'const' instead of 'let'.
+	</p>
+
+	<Prism language="javascript"
+		>{`const palette = {
+		red: '#FF0000',
+		blue: '#0000FF',
+		yellow: '#FFFF00'
+	};
+
+	const palette2 = palette;
+	palette2.green = '#00FF00';
+	
+	console.log(palette2); 
+	
+		// blue: '#0000FF';
+		// green: '#00FF00';
+		// red: '#FF0000';
+		// yellow: '#FFFF00';
+			`}
+	</Prism>
+
+	<h2>Array / Object Equality</h2>
+
+	<Prism language="javascript"
+		>{`let numbers = [1, 2, 3];
+let mystery = [1, 2, 3];
+
+	// numbers === mystery -> false
+	// numbers == mystery -> false
+
+This is because each value has a reference slot, so it is not comparing the values of the array, but actually the reference slot. 
+	
+FOR EXAMPLE:
+
+numbers -> 1234567890;
+mystery -> 9876543210;
+
+	// numbers !== mystery
+
+So the solution is to compare Arrays (or Objects) referring 
+to the same reference/memory slot:
+
+let numbers = [1, 2, 3];
+let numbersRef = numbers;
+
+	// numbers === numbersRef -> true
+
+Therefore if you make a change to an array, 
+it will update all variables pointing to that memory slot:
+
+numbersRef.push(4) 
+
+// numbersRef -> [1, 2, 3, 4]
+// numbers ->  [1, 2, 3, 4]
+
+Therefore there is no easy way to compare the values of an array or object 
+without looping through the values to check. 
+			`}
+	</Prism>
+
 	<!-- <p>
 		The page you're looking at is purely static HTML, with no client-side interactivity needed.
 		Because of that, we don't need to load any JavaScript. Try viewing the page's source, or opening
