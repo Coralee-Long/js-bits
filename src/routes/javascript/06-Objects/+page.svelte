@@ -1,13 +1,5 @@
 <script>
 	import Prism from 'svelte-prism';
-
-	const test = {
-		100: 'here is my value'
-	};
-
-	// console.log('test100', test.100);
-	console.log(test[100]);
-	console.log(test['100']);
 </script>
 
 <svelte:head>
