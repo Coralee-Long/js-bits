@@ -1,5 +1,8 @@
 <script>
 	import Prism from 'svelte-prism';
+	import SubHeader from '/src/routes/components/SubHeader.svelte';
+
+	let text;
 </script>
 
 <svelte:head>
@@ -9,7 +12,10 @@
 
 <div class="text-column">
 	<h1>Javascript Loops</h1>
-	<h2>For Loops</h2>
+	<SubHeader text="For Loops" />
+	<!-- <div class="subheaderShape">
+		<h2>For Loops</h2> -->
+	<!-- </div> -->
 	<p>
 		Basic example of a <a
 			href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration#for_statement"
@@ -73,11 +79,10 @@ This would create an Infinite Loop:
 `}
 	</Prism>
 
-	<h2>Nested For Loops</h2>
+	<p>Looping through an Array</p>
+
 	<Prism language="javascript">
 		{`
-	Looping through an Array:
-
 	const myStudents = [
 		{
 			firstName: 'Abby',
@@ -93,19 +98,29 @@ This would create an Infinite Loop:
 		}
 	];
 
+	let total = 0;
+
 	for (let i = 0; i < myStudents.length; i++) {
+
 		let student = myStudents[i];
 		console.log(student.firstName, student.grade);
+			// Abby 97
+			// Benji 56
+			// Carol 81
+
+		let total += student.grade;
+		console.log(total / myStudents.length;)
+			// 78
 	};
-
-	// Abby 97
-	// Benji 56
-	// Carol 81
-
-
-	Looping through a String (use word.length -1 because you don't 
-	necessarily know the length of the word being used):
-
+`}
+	</Prism>
+	<br />
+	<p>
+		Looping through a String (use word.length -1 because you don't necessarily know the length of
+		the word being used)
+	</p>
+	<Prism>
+		{`
 	const word = "cat";
 
 	for ( let i = word.length -1; i >= 0, i++ ) {
@@ -115,9 +130,99 @@ This would create an Infinite Loop:
 	// c
 	// a
 	// t
+	`}
+	</Prism>
 
+	<h2>Nested Loops</h2>
+	<p>Basic Example of Nested Loops</p>
+	<Prism language="javascript">
+		{`
+// OUTER LOOP:
+	for (let i = 100; i <= 300; i += 100) {
+	console.log('OUTER LOOP', i);
+// INNER LOOP:
+		for (let j = 1; j <= 3; j++) {
+		console.log('  INNER LOOP', j);
+		}
+	}
 
+	// OUTER LOOP 100
+	//   INNER LOOP 1
+	//   INNER LOOP 2
+	//   INNER LOOP 3
+	// OUTER LOOP 200
+	//   INNER LOOP 1
+	//   INNER LOOP 2
+	//   INNER LOOP 3
+	// OUTER LOOP 300
+	//   INNER LOOP 1
+	//   INNER LOOP 2
+	//   INNER LOOP 3
+`}
+	</Prism>
 
+	<p>Nested Loops example</p>
+	<Prism language="javascript">
+		{`
+const sudokuBoard = [
+	[1, 2, 3],
+	[4, 5, 6],
+	[7, 8, 9]
+];
+
+// Sum of numbers on Sodoku Board:
+
+let total = 0;
+
+for (let i = 0; i < sudokuBoard.length; i++) {
+// Loop through board to extract each row
+let row = sudokuBoard[i];
+console.log(row);
+	// [1, 2, 3]
+	// [4, 5, 6]
+	// [7, 8, 9]
+
+// Loop through each row to extract the numbers in the row
+	for (let j = 0; j < row.length; j++) {
+	total += row[j];
+	}
+}
+console.log(total);
+	// 45 (sum of all the numbers)
+`}
+	</Prism>
+
+	<h2>While Loops</h2>
+	<Prism language="javascript">
+		{`
+These 2 loops do essentially the same thing:
+
+	let i = 0; // For While-Loops you have to declare the variable beforehand
+	while (i <= 3) {
+		console.log('while-loop', i);
+		i++;
+	}
+		// while-loop 0
+		// while-loop 1
+		// while-loop 2
+		// while-loop 3
+
+	for (let j = 0; j <= 3; j++) {
+		console.log('if-loop', j);
+	}
+		// if-loop 0
+		// if-loop 1
+		// if-loop 2
+		// if-loop 3
 `}
 	</Prism>
 </div>
+
+<!-- <h2></h2>
+	<p>
+	</p>
+	<Prism language="javascript">
+		{`
+
+`}
+	</Prism> -->

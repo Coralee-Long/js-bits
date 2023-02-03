@@ -56,7 +56,13 @@ h1 {
 }
 
 h2 {
-	font-size: 1.5rem;
+	/* font-size: 1.5rem;
+	color: var(--color-theme-1); */
+	/* border: 2px solid var(--color-theme-1);
+	border-radius: 5px; */
+	/* padding: 0.5rem 2rem 0.5rem 20rem;
+	text-align: center;
+	align-self: flex-start; */
 }
 
 pre {
@@ -75,9 +81,14 @@ pre {
 	flex: 0.6;
 	flex-direction: column;
 	justify-content: flex-start;
-	align-items: flex-start;
+	align-items: center;
 	margin: 0 auto;
 	width: 100%;
+}
+
+.text-column > p {
+	padding-left: 2rem;
+	align-self: start;
 }
 
 input,
